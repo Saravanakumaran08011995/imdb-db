@@ -1,0 +1,63 @@
+CREATE TABLE IMDB_Database (
+   movie_id integer primary key,
+   movie_title text,
+   male_actor text,
+  female_actor text,
+  running_time integer,
+  description longtext,
+  release_date integer,
+  director text,
+  movie_poster blog
+);
+
+Create table genre (
+	movie_id integer primary key,
+  	action BOOLEAN,
+  	drama BOOLEAN,
+  	horror BOOLEAN,
+  	thriller BOOLEAN,
+  	comedy BOOLEAN
+);
+
+Create table artist(
+ 	artist_id integer primary key,
+	artist_name text,
+  	Accent varchar,
+  	Combat_training BOOLEAN,
+  	level_of_fitness varchar,
+  	Singing BOOLEAN,
+  	dancing BOOLEAN
+)
+
+Create table Cast(
+ movie_id integer primary key,
+ artist_name text,
+ role_1 text,
+ role_2 text,
+ role_3 text,
+ role_4 text,
+ role_5 text,
+)
+
+INSERT INTO IMDB_Database  (movie_id, movie_title, male_actor, female_actor, running_time, description, release_date, director)
+VALUES (001,
+"SpiderMan",
+"Tobey Maguire",
+"Kristen Dunst",
+ 121, 
+"Peter Parker's life changes when he is bitten by a genetically altered spider and gains superpowers. He uses his powers to help people and finds himself facing the Green Goblin, an evil maniac.",
+2002,
+"Sam Raimi",
+"https://www.themoviedb.org/t/p/original/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg");
+
+insert into genre (movie_id, action, drama, horror, thriller, comedy)
+values(
+001,true,false,false,false);
+
+insert into artist (artist_id, artist_name, accent, Combat_training, level_of_fitness, Singing, Dancing)
+values(
+1001, "Tobey Maguire", "British", true, "good", false , false , true
+);
+
+insert into Cast (movie_id, artist_name, role_1, role_2, role_3, role_4, role_5)
+values(001, "Tobey Magurire", "Super Hero", "Peter Parker", "null", "null","null");
